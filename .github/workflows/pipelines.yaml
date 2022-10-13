@@ -2,8 +2,10 @@ name: Build and Deploy to GKE
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  
 env:
   PROJECT_ID: ${{secrets.GKE_PROJECT}}
   GKE_CLUSTER: github-actions-gke
@@ -11,6 +13,7 @@ env:
   DEPLOYMENT_NAME: github-actions-gke-deploy
   IMAGE: xiu0327/github-actions-gke-image
   TAG: 1.0.0
+
 jobs:
   setup-build-publish-deploy:
     name: Setup Build Publish Deploy
