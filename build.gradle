@@ -8,7 +8,7 @@ plugins {
 
 jib {
 	from {
-		image = "eclipse-temurin:11-jre"
+		image = "adoptopenjdk:11-jre"
 	}
 	to {
 		image = "xiu0327/spring-api-test"
